@@ -1,0 +1,62 @@
+{
+  "type": "entities",
+  "title": "APC Back-UPS RS 500",
+  "icon": "mdi:server-network",
+  "show_header_toggle": false,
+  "state_color": true,
+  "entities": [
+    {"entity": "sensor.apc_back_ups_rs_500_status", "name": "UPS status"},
+    {"entity": "binary_sensor.apc_back_ups_rs_500_mains_present", "name": "Mains power"},
+    {"entity": "binary_sensor.apc_back_ups_rs_500_charging_reported_by_ups", "name": "Charging (UPS status)"},
+    {
+      "type": "conditional",
+      "conditions": [{"entity": "binary_sensor.apc_back_ups_rs_500_voltage_not_regulated_ups_flag", "state": "on"}],
+      "row": {"entity": "binary_sensor.apc_back_ups_rs_500_voltage_not_regulated_ups_flag", "name": "Voltage flag (UPS)", "icon": "mdi:alert-circle-outline"}
+    },
+    {
+      "type": "conditional",
+      "conditions": [{"entity": "binary_sensor.apc_back_ups_rs_500_low_battery", "state": "on"}],
+      "row": {"entity": "binary_sensor.apc_back_ups_rs_500_low_battery", "name": "Low battery"}
+    },
+    {
+      "type": "conditional",
+      "conditions": [{"entity": "binary_sensor.apc_back_ups_rs_500_overload", "state": "on"}],
+      "row": {"entity": "binary_sensor.apc_back_ups_rs_500_overload", "name": "Overload"}
+    },
+    {"type": "section", "label": "Battery"},
+    {"entity": "sensor.apc_back_ups_rs_500_battery_charge", "name": "Charge (UPS)"},
+    {"entity": "sensor.apc_back_ups_rs_500_battery_voltage", "name": "Voltage"},
+    {"entity": "sensor.apc_back_ups_rs_500_battery_runtime", "name": "Runtime (UPS)"},
+    {"entity": "sensor.apc_back_ups_rs_500_battery_temperature", "name": "Temperature"},
+    {"type": "section", "label": "Load and mains"},
+    {"entity": "sensor.apc_back_ups_rs_500_load", "name": "Load"},
+    {"entity": "sensor.apc_back_ups_rs_500_input_voltage", "name": "Input voltage"},
+    {"entity": "sensor.apc_back_ups_rs_500_output_voltage", "name": "Output voltage"},
+    {"type": "section", "label": "USB data"},
+    {"entity": "sensor.apc_back_ups_rs_500_last_usb_sample", "name": "Last measurement"},
+    {"entity": "sensor.apc_back_ups_rs_500_usb_reading_duration", "name": "Reading duration"},
+    {
+      "type": "buttons",
+      "entities": [
+        {
+          "entity": "select.apc_back_ups_rs_500_input_sensitivity",
+          "name": "Settings",
+          "icon": "mdi:cog-outline",
+          "show_name": true,
+          "tap_action": {"action": "navigate", "navigation_path": "/config/integrations/integration/apc_direct"},
+          "hold_action": {"action": "none"},
+          "double_tap_action": {"action": "none"}
+        },
+        {
+          "entity": "sensor.apc_back_ups_rs_500_battery_voltage",
+          "name": "History",
+          "icon": "mdi:chart-line",
+          "show_name": true,
+          "tap_action": {"action": "more-info"},
+          "hold_action": {"action": "none"},
+          "double_tap_action": {"action": "none"}
+        }
+      ]
+    }
+  ]
+}

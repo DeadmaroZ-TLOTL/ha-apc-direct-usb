@@ -1,0 +1,8 @@
+{
+  "title": "APC Direct USB",
+  "config": {
+    "step": {"user": {"title": "APC Direct USB", "description": "Connect a supported Back-UPS RS 500 directly over USB. Stop the previous USB driver first, then enter the serial number printed on your UPS.", "data": {"serial": "UPS serial number"}}},
+    "error": {"cannot_connect": "Cannot read the selected UPS. Check its serial number, USB availability and supported firmware profile.", "invalid_serial": "Enter a valid UPS serial number."},
+    "abort": {"already_configured": "This UPS is already configured."}
+  }
+}

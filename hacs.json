@@ -1,0 +1,6 @@
+{
+  "name": "APC Direct USB",
+  "homeassistant": "2026.11.1",
+  "content_in_root": false,
+  "zip_release": false
+}

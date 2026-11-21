@@ -1,0 +1,12 @@
+{
+  "domain": "apc_direct",
+  "name": "APC Direct USB",
+  "version": "1.0.0",
+  "codeowners": ["@DeadmaroZ-TLOTL"],
+  "config_flow": true,
+  "documentation": "https://github.com/DeadmaroZ-TLOTL/ha-apc-direct-usb",
+  "issue_tracker": "https://github.com/DeadmaroZ-TLOTL/ha-apc-direct-usb/issues",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": ["pyusb==1.3.1"]
+}
